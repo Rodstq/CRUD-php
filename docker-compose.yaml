@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  db:
+    image: mysql 
+    restart: always 
+    environment:
+      MYSQL_DATABASE: cursomvc
+      MYSQL_USER: mvc
+      MYSQL_PASSWORD: mvc
+      MYSQL_ROOT_PASSWORD: mvc  
+    ports:
+      - "3306:3306"  
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  
+    networks:
+      - mvc_network 
+networks:
+  mvc_network:
+    driver: bridge  

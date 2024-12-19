@@ -1,0 +1,21 @@
+{
+    "name": "athos/estudosmvc",
+    "description": "Estudos MVC em PHP",
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "app\\":"app/",
+            "core\\" : "core/"
+        },
+        "files": [
+            "config/config.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "athos r."
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
