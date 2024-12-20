@@ -4,7 +4,7 @@
     </div>
 
     <div class="w-50">
-        <form class="p-5" action="router=Site/cadastro/" method="post">
+        <form class="p-5" action="?router=Site/cadastro/" method="post">
                 <div class="mb-3">
                     <label for="nome" class="form-label "> Digite seu nome</label>
                     <input class="form-control bg-dark text-light" type="text" name="nome" id="nome" required>

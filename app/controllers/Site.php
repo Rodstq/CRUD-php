@@ -6,7 +6,7 @@ use app\models\Crud;
 
 class Site extends Crud 
 {
-    public function home(){
+        public function home(){
         require_once __DIR__ . '/../views/home.php';
     }
 
@@ -15,15 +15,14 @@ class Site extends Crud
         require_once __DIR__ . '/../views/galeria.php';
     }
     public function cadastro(){
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') { // Verifica se é POST
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             try {
-                $cadastro = $this->create(); // Chama create() somente se for POST
+                $cadastro = $this->create();
                 $mensagem = "Cadastro realizado com sucesso!";
             } catch (\Exception $e) {
                 $mensagem = "Erro ao cadastrar: " . $e->getMessage();
             }
         }
-    
         require_once __DIR__ . '/../views/cadastro.php';
     }
 

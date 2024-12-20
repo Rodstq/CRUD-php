@@ -14,10 +14,10 @@ class Crud extends Connection
         
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':nome', $nome);
-        $stmt->bindParam('email', $email);
+        $stmt->bindParam(':email', $email);
         $stmt->execute();
 
-        return $stmt;
+        return $stmt;       
     }
     
     public function read(){
@@ -29,7 +29,7 @@ class Crud extends Connection
         $stmt->execute();
 
         $result = $stmt->fetchAll();
-
+        
         return $result;
 
     }

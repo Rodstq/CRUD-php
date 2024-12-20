@@ -4,9 +4,9 @@ namespace app\models;
 
 abstract class Connection
 {
-    private $dbname = 'mysql:host=db;dbname=cursomvc';
-    private $user = 'mvc';
-    private $pass = 'mvc';
+    private $dbname = 'mysql:host=mysql;dbname=mvcdocker';
+    private $user = 'root';
+    private $pass = 'root';
 
     protected function connect(){
         try {
@@ -14,7 +14,7 @@ abstract class Connection
             $conn->exec("set names utf8");
             return $conn;
         } catch (\PDOException $erro) {
-            echo $erro->getMessage();
-        }
+            $error = $erro->getMessage();
+        }        
     }
 }

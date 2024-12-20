@@ -11,7 +11,7 @@ class Router
     public function __construct() {
         $router = $this->url();
        
-        if (file_exists('/var/www/html/app/controllers/' . ucfirst($router[0]) . '.php')) {
+        if (file_exists(__DIR__ . '/../app/controllers/' . ucfirst($router[0]) . '.php')) {
             $this->controller = $router[0];
             unset($router[0]);
         }
@@ -34,7 +34,7 @@ class Router
     private function url(){
         $router = filter_input(INPUT_GET, 'router', FILTER_SANITIZE_URL);
         if ($router === null) {
-            $router = ''; // Valor padrão caso seja null
+            $router = ' ';
         }
         $parse_url = explode("/", $router);
         return $parse_url;
